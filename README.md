@@ -1,4 +1,4 @@
-# Kasemsak Kaenthon
+# นายเขษมศักดิ์ แก่นทน 68114540090
 
 ## สัปดาห์ที่ 9 : Object-Oriented Programming (OOP)
 
