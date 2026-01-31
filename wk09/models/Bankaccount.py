@@ -11,7 +11,7 @@ class BankAccount:
         
     def __add__(self, other):
         if isinstance(other, BankAccount):
-            new_balance = self.balance + other
+            new_balance = self.balance + other.balance
             new_account = BankAccount(new_balance)
             return new_account
     
