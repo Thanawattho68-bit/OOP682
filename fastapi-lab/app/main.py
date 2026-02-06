@@ -8,6 +8,8 @@ from sqlalchemy.orm import Session
 from fastapi.responses import RedirectResponse
 from . import models_orm
 
+# CMD Run: uvicorn app.main:app --reload
+
 models_orm.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
