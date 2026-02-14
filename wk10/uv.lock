@@ -1,0 +1,19 @@
+version = 1
+revision = 3
+requires-python = ">=3.10"
+
+[manifest]
+members = [
+    "log-viewer",
+    "oop682",
+]
+
+[[package]]
+name = "log-viewer"
+version = "0.1.0"
+source = { virtual = "log_viewer" }
+
+[[package]]
+name = "oop682"
+version = "0.1.0"
+source = { virtual = "." }
