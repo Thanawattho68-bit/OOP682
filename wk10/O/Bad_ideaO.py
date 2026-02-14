@@ -1,3 +1,5 @@
+# OCP: เปิด/ปิด
+# เปิดรับการขยายความสามารถ แต่ปิดกั้นการแก้ไขโค้ดเดิม
 class Circle:
     def __init__(self, radius):
         self.redius = radius
