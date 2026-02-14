@@ -1,3 +1,5 @@
+# Single Responsibility Principle (SRP)
+# หนึ่งคลาสควรมีเหตุผลเดียวในการเปลี่ยนแปลง (หน้าที่เดียว) [6]
 class ReportGenerator:
     def __init__(self, data):
         self.data = data
