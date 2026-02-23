@@ -1,4 +1,3 @@
-# 1. FileLogSource (อ่านไฟล์จริง)
 from interfaces.data_source import ILogSource
 from typing import List
 

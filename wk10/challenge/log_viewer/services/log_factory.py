@@ -3,15 +3,17 @@ from services.csv_source import CsvLogSource
 
 
 class LogFactory:
-    @staticmethod
-    def create_source(filename):
-        filename = filename.lower()
+    _MAPPING = {
+        ".csv": CsvLogSource,
+        ".log": FileLogSource,
+    }
 
-        if filename.endswith(".csv"):
-            return CsvLogSource(filename)
-
-        elif filename.endswith(".log"):
-            return FileLogSource(filename)
-
-        else:
-            raise ValueError("Unsupported file type")
+    @classmethod
+    def create_source(cls, filename: str):
+        filename_lower = filename.lower()
+        
+        for ext, source_class in cls._MAPPING.items():
+            if filename_lower.endswith(ext):
+                return source_class(filename)
+                
+        raise ValueError(f"Unsupported file type for: {filename}")

@@ -7,20 +7,16 @@ class CsvLogSource(ILogSource):
         self.filename = filename
 
     def get_logs(self):
-        formatted_logs = []
         try:
             with open(self.filename, newline="", encoding="utf-8") as file:
                 reader = csv.DictReader(file)
-
-                for row in reader:
-                    log_line = (
-                        f"Name: {row['ชื่อ']}  |  "
-                        f"Age: {row['อายุ']}  |  "
-                        f"Province: {row['จังหวัด']}  |  "
-                        f"Party: {row['พรรคที่เลือก']}"
-                    )
-                    formatted_logs.append(log_line)
-            return formatted_logs
+                return [
+                    f"Name: {row['ชื่อ']:<20} | "
+                    f"Age: {row['อายุ']:<3} | "
+                    f"Province: {row['จังหวัด']:<15} | "
+                    f"Party: {row['พรรคที่เลือก']}"
+                    for row in reader
+                ]
         except FileNotFoundError:
             return ["Error: CSV file not found"]
         except Exception as e:

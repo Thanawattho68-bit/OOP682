@@ -1,4 +1,3 @@
-# 2. MockLogSource (ข้อมูลจำลอง)
 from interfaces.data_source import ILogSource
 from typing import List
 
