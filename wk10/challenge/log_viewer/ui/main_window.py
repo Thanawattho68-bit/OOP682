@@ -19,4 +19,5 @@ class MainWindow(QMainWindow):
 
     def load_logs(self):
         logs = self.log_source.get_logs()
-        self.log_display.setText(logs)
+        # logs เป็น List[str] ต้องแปลงเป็น string ก่อนใส่ QTextEdit
+        self.log_display.setText("\n".join(logs))

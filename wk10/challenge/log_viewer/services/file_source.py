@@ -10,6 +10,6 @@ class FileLogSource(ILogSource):
     def get_logs(self) -> List[str]:
         try:
             with open(self.filepath, "r", encoding="utf-8") as f:
-                return f.readlines()
+                return f.read().splitlines()
         except FileNotFoundError:
             return ["Error: File not found"]
